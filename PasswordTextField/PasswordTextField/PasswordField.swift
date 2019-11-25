@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// @IBDesignable
 class PasswordField: UIControl {
     
     // Public API - these properties are used to fetch the final password and strength values
@@ -40,6 +40,23 @@ class PasswordField: UIControl {
     
     func setup() {
         // Lay out your subviews here
+        addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(showHideButton)
+        showHideButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(weakView)
+        weakView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(mediumView)
+        mediumView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(strongView)
+        strongView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(strengthDescriptionLabel)
+        strengthDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
