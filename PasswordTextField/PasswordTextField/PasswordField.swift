@@ -83,10 +83,7 @@ class PasswordField: UIControl {
     func setup() {
         // Background
         backgroundColor = bgColor
-        frame = CGRect(x: standardMargin,
-                       y: standardMargin,
-                       width: intrinsicContentSize.width,
-                       height: textFieldContainerHeight)
+
         
         // Enter Password Label
         addSubview(titleLabel)
@@ -158,8 +155,8 @@ class PasswordField: UIControl {
         addSubview(showHideButton)
         showHideButton.translatesAutoresizingMaskIntoConstraints = false
         showHideButton.setImage(UIImage(named: "eyes-closed"), for: .normal)
-        showHideButton.frame = CGRect(x: 330, y: 44, width: 30, height: 30)
-        showHideButton.addTarget(self, action: #selector(hideText), for: .touchDown)
+        showHideButton.layer.borderWidth = 1
+        showHideButton.addTarget(self, action: #selector(hideText), for: .touchUpInside)
         
         NSLayoutConstraint(item: showHideButton,
                            attribute: .centerY,
