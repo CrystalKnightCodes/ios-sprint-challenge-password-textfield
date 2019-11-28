@@ -9,6 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+     @IBAction func returnKeyTapped(_ sender: PasswordField) {
+           switch sender.password.count {
+           case 7...15:
+               print("Password \"\(sender.password)\" could be stronger.")
+           case 16...Int.max:
+               print("Password \"\(sender.password)\" is strong.")
+           default:
+               print("Password \"\(sender.password)\" is weak.")
+           }
+    }
     
     // For use in the stretch goal
     //
